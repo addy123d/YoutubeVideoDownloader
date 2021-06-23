@@ -12,4 +12,4 @@ To install this project run
 ```
 
 ## If it's not working for you
-![Check Out This](https://github.com/fent/node-ytdl-core#Limitations)
+![Check This Out](https://github.com/fent/node-ytdl-core#Limitations)
