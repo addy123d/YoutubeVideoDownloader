@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="icon1.jpg" type="icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Luckiest+Guy|Oxanium|Poppins|Rock+Salt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Girassol|Quicksand|Acme|EB+Garamond&display=swap" rel="stylesheet">
+    <title>Youtube Downloader</title>
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    height: 100%;
+    color: #ffffff;
+    font-family: 'Kaushan Script', cursive;
+font-family: 'Luckiest Guy', cursive;
+font-family: 'Rock Salt', cursive;
+}
+
+.holi{
+    background: linear-gradient(rgba(0, 0,0, 0.9),rgba(0, 0, 0, 0.8)),url(back.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+   
+}
+
+.notifybar{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    justify-items: center;
+    
+}
+
+#bar{
+    background: #f14747;
+    padding: .8em 2em;
+    color: #ffffff;
+    border-radius:0px 0px 10px 10px;
+    font-weight: bolder;
+    text-shadow: 1px 1px 5px #000000;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s,opacity 0.5s;
+}
+.icon{
+    margin-top: 1%;
+}
+img{
+
+    height: 50px;
+    width: 100px;
+    border-radius: 140px;
+}
+.notifytext h2{
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+}
+.title{
+    display: flex;
+    justify-content: center;
+}
+.title h2{
+    /* font-family: 'Quicksand', sans-serif; */
+    /* font-family: 'Girassol', cursive; */
+    font-family: 'Oxanium',cursive;
+    font-family: 'Acme',sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px #000000;
+    letter-spacing: 1px;
+    color: #e9e3e3;
+}
+
+.url{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+input{
+    padding: .2em .5em;
+    width: 20%;
+    transition: width .5s;
+    background: #ffffff;
+    padding: .4em .4em;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: .8rem;
+}
+
+input:hover{
+    width: 25%;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+}
+
+.btn button{
+    margin-top: 2%;
+    padding: .4em .9em;
+    border-radius: 40px;
+    border: none;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    cursor: pointer;
+    
+}
+button:hover{
+    transition: all .5s;
+    background: red;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+.credits{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2%;
+    margin-top: 15%;
+}
+
+.credits h2{
+    text-shadow: 1px 1px 2px #000000;
+    font-family: 'EB Garamond', serif;
+    font-size: 2rem;
+    opacity: .5;
+}
+
+@media all and (max-width:730px){
+    img{
+    height: 30px;
+    width: 80px;
+    border-radius: 140px;
+    }
+
+    .notifytext h2{
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: .8rem;
+    }
+
+    .title h2{
+    /* font-family: 'Quicksand', sans-serif; */
+    /* font-family: 'Girassol', cursive; */
+    font-family: 'Oxanium',cursive;
+    font-family: 'Acme',sans-serif;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px #000000;
+    letter-spacing: 1px;
+    color: #e9e3e3;
+    }
+
+    input{
+    padding: .2em .5em;
+    width: 50%;
+    transition: width .5s;
+    background: #ffffff;
+    padding: .4em .4em;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: .8rem;
+    }
+    .url{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    }
+
+    input:hover{
+    width: 55%;
+    }
+
+    .btn button{
+    margin-top: 5%;
+    padding: .4em .9em;
+    border-radius: 40px;
+    border: none;
+    font-size: .8rem;
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    cursor: pointer;
+    
+}
+
+.credits{
+    text-align: center;
+    
+}
+
+.credits h2{
+    font-size: 1rem;
+}
+}
+</style>
+<body>
+    <section class="holi">
+        <div class="holi">
+           <div class="notifybar">
+               <div id="bar">
+               <div class="icon">
+                   <img src="icon1.jpg" alt="">
+               </div>
+               <div class="notifytext">
+                   <h2>Welcome !</h2>
+               </div>
+               </div>
+           </div>
+
+
+           <div class="title">
+               <h2>Youtube Video Downloader</h2>
+           </div>
+         <div id="mp4cont" >
+           <form action="/downloadmp4" method="get">
+           <div class="url">
+               <input type="text" name="url" placeholder="Enter URL here">
+               <label style="color:red; font-size: 1rem; font-family: 'Oxanium',cursive;">Incorrect Url</label> 
+           </div>
+           <div class="btn">
+               <button>Download mp4 &#128249;</button>
+               </form>
+           </div>
+     
+           <div class="btn">
+            <button id="mp3" onclick="changetomp3()">For mp3 download &#119136;</button>
+            </div>
+            </div>
+
+
+            <div id="mp3cont" style="display: none;">
+                <form action="/downloadmp3" method="get">
+                <div class="url">
+                    <input type="text" name="url" placeholder="Enter URL here">
+                </div>
+                <div class="btn">
+                    <button>Download mp3 &#119136;</button>
+                    </form>
+                </div>
+          
+                <div class="btn">
+                 <button id="mp3" onclick="backtomp4()">Back</button>
+                 </div>
+                 </div>
+
+
+           <div class="credits">
+               <a href="https://www.instagram.com/addy__242/?hl=en" style="text-decoration: none; color: #ffffff;"><h2>Developed By Aditya Chaudhary</h2></a>
+           </div>
+        </div>
+    </section>
+</body>
+<script type="text/javascript">
+const bar = document.getElementById("bar");
+const mp3 = document.getElementById("mp3cont");
+const mp4 = document.getElementById("mp4cont");
+window.addEventListener("load",()=>{
+    bar.style.visibility = "visible";
+    bar.style.opacity = "1";
+    setTimeout(()=>{
+    bar.style.visibility = "hidden";
+    bar.style.opacity = "0";   
+    },3000)
+})
+
+
+// Change to mp3 section
+
+function changetomp3(){
+    mp4.style.display = "none";
+    mp3.style.display = "block";
+}
+
+// Change to mp4 section
+
+function backtomp4(){
+    mp4.style.display = "block";
+    mp3.style.display = "none";
+}
+</script>
+</html>

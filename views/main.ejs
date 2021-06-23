@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font CDN -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <!-- Icons CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+    <title>Youtube Downloader</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html,
+    body {
+        background: #f1f3f8;
+        color: #1c1d1e;
+    }
+
+    .download {
+        background: #f1f3f8;
+
+        background-size: cover;
+    }
+
+    /* URL input */
+
+    .form {
+        margin: 4%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form input {
+        width: 100%;
+        padding: .8em;
+        border: none;
+        font-family: 'Poppins', sans-serif;
+        outline: none;
+
+        border-radius: 5px;
+        background: #f1f3f8;
+        box-shadow: 20px 20px 60px #d2d3d8,
+            -20px -20px 60px #ffffff;
+
+
+        font-size: 2rem;
+    }
+
+
+    img {
+        display: block;
+        height: 200px;
+        max-width: 100%;
+    }
+
+
+    /* Container */
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        opacity: 0;
+        pointer-events: none;
+
+    }
+
+    .container .down-container {
+        margin: 3%;
+    }
+
+    .container .down-container>div {
+        margin: 3%;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    select {
+        padding: .8em;
+
+        border: none;
+        font-family: 'Poppins', sans-serif;
+        outline: none;
+
+        border-radius: 5px;
+        background: #ffffff;
+        color: #1c1d1e;
+    }
+
+    button {
+        width: 100%;
+        background: #c4302b;
+        color: #f5f5f5;
+        outline: none;
+        border: none;
+        padding: .7em;
+        border-radius: 5px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        cursor: pointer;
+        text-shadow: 1px 1px 2px #1c1d1e;
+    }
+
+    /* Title */
+
+    .title {
+        display: flex;
+        justify-content: flex-start;
+
+        margin: 2%;
+
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .title h2 i {
+        font-size: 5rem;
+        color: #c4302b;
+    }
+
+    /* Song name */
+
+    .songname {
+        font-family: 'Roboto Mono', sans-serif;
+        font-size: 1.3rem;
+    }
+
+
+    /* Gif */
+    .gif {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .gif.active {
+        opacity: 1;
+        pointer-events: visible;
+    }
+
+
+
+    /* Media queries */
+
+    @media screen and (max-width: 974px) {
+        .form {
+            margin-top: 5%;
+        }
+
+        .form input {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .form {
+            margin-top: 7%;
+        }
+    }
+
+    @media screen and (max-width: 591px) {
+        .container .down-container>div {
+            margin-top: 6%;
+        }
+
+        .songname {
+            font-size: 1rem;
+        }
+    }
+
+
+    @media screen and (max-width: 490px) {
+        .title {
+            margin: 4%;
+        }
+
+        .form {
+            margin-top: 12%;
+        }
+
+        .form input {
+            font-size: 1.3rem;
+        }
+    }
+</style>
+
+<body>
+    <section class="download">
+        <!-- Heading -->
+        <div class="title">
+            <h2><i class="fa fa-youtube" aria-hidden="true"></i> Videos</h2>
+        </div>
+
+        <!-- Form -->
+        <div class="form">
+            <input type="url" name="url" id="url" placeholder="Paste URL" autocomplete="off">
+        </div>
+
+        <!-- GIF -->
+        <div class="gif">
+            <img src="/gif.gif" alt="">
+        </div>
+
+
+        <!-- Container -->
+        <div class="container">
+
+            <div class="down-container">
+
+                <!-- Thumbnail -->
+                <div class="thumb">
+                    <img src="https://images.unsplash.com/photo-1529279007968-c558b75b073b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=722&q=80"
+                        alt="thumbnail">
+                </div>
+
+                <!-- Title -->
+
+                <div class="song-title">
+                    <h2 class="songname">Dummy</h2>
+                </div>
+
+                <!-- Resolution -->
+                <div class="resolution">
+                    <select id="reso">
+                    </select>
+                </div>
+
+                <!-- Download Button -->
+
+                <div class="download">
+                    <button id="downloadBtn">Go <i class="fa fa-download" aria-hidden="true"></i></button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </section>
+</body>
+<script>
+    const url = document.querySelector("#url");
+    const download_button = document.querySelector("#downloadBtn");
+
+    function requestServerforInfo() {
+        console.log("URL : ", url.value);
+
+        document.querySelector(".gif").classList.toggle("active");
+        document.querySelector(".container").style.opacity = "0";
+        document.querySelector(".container").style.pointerEvents = "none";
+
+        fetch(`/getInfo?url=${url.value}`)
+            .then(res => res.json())
+            .then(response => {
+                console.log(response);
+                document.querySelector(".gif").classList.toggle("active");
+
+                console.log(response.videoDetails.author.thumbnails[0]);
+
+                console.log(response.formats);
+
+                document.querySelector(".container").style.opacity = "1";
+                document.querySelector(".container").style.pointerEvents = "visible";
+
+                let html = "<option hidden>Choose Quality</option>";
+
+                response.formats.forEach((element, index) => {
+
+                    const type = element.mimeType;
+
+                    if (type.includes("video/mp4")) {
+                        html += `<option>${element.qualityLabel}</option>`;
+                    }
+
+                });
+
+                document.querySelector("#reso").innerHTML = html;
+
+                document.querySelector(".songname").innerText = response.videoDetails.title;
+
+                document.querySelector(".thumb").innerHTML = ` <img src="${response.videoDetails.author.thumbnails[1].url}"
+                        alt="thumbnail">`;
+            })
+            .catch(err => console.error(`Something went wrong : ${err}`));
+    }
+
+
+    function downloadVideo() {
+        console.log(`URL : ${url.value}`);
+        console.log(`Reso : ${document.querySelector("#reso").value}`);
+
+        const title = document.querySelector(".songname").innerText;
+
+        let request_url = `${location.origin}/download?url=${url.value}&title=${title}&resolution=${document.querySelector("#reso").value}`;
+
+        location.href = request_url;
+    }
+
+    url.addEventListener("input", requestServerforInfo);
+
+    download_button.addEventListener("click", downloadVideo);
+</script>
+
+</html>
